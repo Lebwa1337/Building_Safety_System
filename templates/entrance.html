@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #e2e2e2;
+        }
+        .building-row {
+            background-color: #cfe2f3;
+        }
+    </style>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+  <p>{{ request.user.username }}</p>
+  <a href="{% url 'building:logout' %}">Logout</a>
+{% else %}
+  <a href="{% url 'building:login' %}">Login</a>
+  <a href="{% url 'building:signup' %}">Signup</a>
+{% endif %}
+{{ request.user.groups.all  }}
+  <h1>Welcome!</h1>
+<table>
+    <tr>
+        <th>Apartments</th>
+    </tr>
+    {% for apart in entrance.apartment_set.all %}
+    <tr class="building-row">
+        <td>{{ apart }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
