@@ -1,0 +1,56 @@
+[
+  {
+    "model": "building.Building",
+    "pk": 1,
+    "fields": {
+      "address": "st.john"
+    }
+  },
+  {
+    "model": "building.Building",
+    "pk": 2,
+    "fields": {
+      "address": "st.peace"
+    }
+  },
+  {
+    "model": "building.Entrance",
+    "pk": 1,
+    "fields": {
+      "number": "5",
+      "building": 1
+    }
+  },
+ {
+    "model": "building.Entrance",
+    "pk": 2,
+    "fields": {
+      "number": "6",
+      "building": 1
+    }
+  },
+  {
+    "model": "building.Entrance",
+    "pk": 3,
+    "fields": {
+      "number": "25",
+      "building": 2
+    }
+  },
+  {
+    "model": "building.Apartment",
+    "pk": 1,
+    "fields": {
+      "number": "22",
+      "entrance": 1
+    }
+  },
+  {
+    "model": "building.Apartment",
+    "pk": 2,
+    "fields": {
+      "number": "23",
+      "entrance": 1
+    }
+  }
+]
